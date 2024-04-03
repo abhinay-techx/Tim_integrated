@@ -1,0 +1,69 @@
+/* Fonts that we will be using */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nav link selection */
+@layer components {
+  .nav-link{
+    @apply relative font-semibold text-white cursor-pointer text-[17px] w-fit md:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-yellow-400 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center hidden
+  }
+  .nav-link-mobile{
+    @apply relative mb-[2rem] font-semibold text-white cursor-pointer text-[27px] w-fit md:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-yellow-400 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center hidden
+
+  }
+  .heading{
+    @apply text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase
+  }
+}
+
+
+
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  background-color: #00A3D4;
+}
+
+.btn::before {
+  content: "";
+  background-color: #FFD966;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  position: absolute;
+  transform: scaleX(0);
+  transition: all 1s;
+  transform-origin: left;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  border-radius: 12px;
+  transform: scaleX(1);
+  transition-duration: 1.5s;
+}
+
+.btn-container:hover {
+  transform: scale(1);
+  transition-duration: 0.5s;
+  border-radius: 12px;
+}
