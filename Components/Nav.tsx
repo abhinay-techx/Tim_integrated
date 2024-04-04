@@ -25,7 +25,7 @@ const Nav = ({ openNav }: Props) => {
 
   const handleLogin = () => {
     if (isLoggedIn) {
-      logout({ returnTo: window.location.origin });
+      logout();
     } else {
       loginWithRedirect();
     }

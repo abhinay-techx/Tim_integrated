@@ -51,7 +51,7 @@ const Profile = () => {
             Back to Home
           </button>
           <button
-            onClick={() => logout({ returnTo: window.location.origin })}
+            onClick={() => logout()}
             className="px-4 py-2 bg-[#00A3D4] hover:bg-green-500 text-white font-semibold rounded"
           >
             Logout

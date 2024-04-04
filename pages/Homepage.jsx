@@ -8,7 +8,7 @@ import Services from '@/Components/Services';
 import Testimonials from '@/Components/Testimonials'; // Import Testimonials component
 import Footer from '@/Components/Footer';
 import JobSearch from '@/Components/Internships'
-import Login from '@/Components/login'
+
 
 import React, { useState } from 'react';
 

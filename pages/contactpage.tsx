@@ -1,5 +1,4 @@
 import About from '@/Components/About';
-import EdTalks from '@/Components/EdTalks'; // Import EdTalks component
 import Hero from '@/Components/Hero';
 import MobileNav from '@/Components/MobileNav';
 import Nav from '@/Components/Nav';

@@ -1,16 +1,36 @@
+// InternshipSearch.tsx
 import React, { useState } from "react";
-import { IoSearchOutline } from "react-icons/io5";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoSearchOutline, IoCloseCircleOutline } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 
-const Search = ({ searchData, setSearchData }) => {
+// Define the type for a single search data item
+interface SearchDataItem {
+  id: number;
+  image: string; // Assuming image is a string representing the path to the image
+  title: string;
+  time: string;
+  location: string;
+  type: string;
+  level: string;
+  paid: boolean;
+  desc: string;
+  company: string;
+}
+
+// Define the interface for the props
+interface SearchProps {
+  searchData: SearchDataItem[]; // Specify the type of searchData
+  setSearchData: React.Dispatch<React.SetStateAction<SearchDataItem[]>>; // Specify the type of setSearchData
+}
+
+const Search: React.FC<SearchProps> = ({ searchData, setSearchData }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [locationFilter, setLocationFilter] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
   const [levelFilter, setLevelFilter] = useState("");
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const filteredData = searchData.filter((job) => {
       const matchesSearch = job.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -37,7 +57,7 @@ const Search = ({ searchData, setSearchData }) => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <IoIosCloseCircleOutline
+            <IoCloseCircleOutline
               className="text-[2em] text-[#4b4b4e] hover:text-textColor icon"
               onClick={() => setSearchQuery("")}
             />
@@ -52,7 +72,7 @@ const Search = ({ searchData, setSearchData }) => {
               value={locationFilter}
               onChange={(e) => setLocationFilter(e.target.value)}
             />
-            <IoIosCloseCircleOutline
+            <IoCloseCircleOutline
               className="text-[2em] text-[#4b4b4e] hover:text-textColor icon"
               onClick={() => setLocationFilter("")}
             />
