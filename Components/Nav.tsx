@@ -1,3 +1,4 @@
+//components/nav.tsx
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -30,6 +31,14 @@ const Nav = ({ openNav }: Props) => {
     }
   };
 
+  const handleInternshipsClick = () => {
+    if (!isAuthenticated) {
+      // Redirect to login page if user is not authenticated
+      loginWithRedirect();
+    }
+    // You can add additional logic here for handling authenticated user behavior if needed
+  };
+
   return (
     <div className="navbar fixed top-0 left-0 right-0 z-50 bg-[#00A3D4] shadow-md">
       <div className="flex items-center justify-between w-[90%] mx-auto h-[12vh]">
@@ -49,7 +58,7 @@ const Nav = ({ openNav }: Props) => {
           <Link href="/#about" className="nav-link">
             About Us
           </Link>
-          <Link href="/internshipspge" className="nav-link">
+          <Link href="/internshipspge" className="nav-link" onClick={handleInternshipsClick}>
             Internships
           </Link>
           {/* <Link href="/" className="nav-link">Ed Talks</Link> */}
@@ -58,7 +67,7 @@ const Nav = ({ openNav }: Props) => {
             Contact Us
           </Link>
           <button className="bg-yellow-500 text-white px-4 py-2 rounded-md" onClick={handleLogin}>
-            {isLoggedIn ? "Logout" : "Login/Signup"}
+            {isLoggedIn ? "Logout" : "Login"}
           </button>
         </div>
         {/* Hamburger icon */}

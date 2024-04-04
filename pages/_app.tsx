@@ -1,11 +1,27 @@
-// pages/_app.tsx
-import { Auth0Provider } from '@auth0/auth0-react';
+//pages/app.tsx
+import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import '../styles/globals.css';
+import { useEffect } from 'react';
+import '../styles/globals.css'; // Import global styles
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const { isAuthenticated } = useAuth0(); // Destructure isAuthenticated here to use it for immediate redirection
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      if (url === '/' && isAuthenticated) {
+        router.replace('/profile');
+      }
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router, isAuthenticated]);
 
   return (
     <Auth0Provider
