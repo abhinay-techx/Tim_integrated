@@ -25,21 +25,28 @@ const Profile = () => {
 
         <div className="flex flex-col space-y-4">
           <div>
-            <button
-              onClick={() => {/* Function to explore first type of internships */}}
-              className="btn px-6 py-3 font-semibold rounded-lg border bg-opacity-70 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white w-full"
+          <button
+            onClick={() => {
+              // Function to explore first type of internships
+              window.location.href = 'https://theinnovationmaster.com/summer-experience-program/?et_fb=1&PageSpeed=off';
+            }}
+            className="btn px-6 py-3 font-semibold rounded-lg border bg-opacity-70 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white w-full"
             >
               Summer Experience Programme
-            </button>
+          </button>
           </div>
           
           <div>
-            <button
-              onClick={() => {/* Function to explore first type of internships */}}
-              className="btn px-6 py-3 font-semibold rounded-lg border bg-opacity-70 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white w-full"
+          <button
+            onClick={() => {
+              // Function to explore first type of internships
+              window.location.href = 'https://theinnovationmaster.com/jobs/';
+            }}
+            className="btn px-6 py-3 font-semibold rounded-lg border bg-opacity-70 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white w-full"
             >
               14 Hrs Internships
-            </button>
+          </button>
+
           </div>
         </div>
 
