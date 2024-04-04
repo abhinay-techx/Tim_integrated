@@ -1,5 +1,4 @@
 import About from '@/Components/About';
-import EdTalks from '@/Components/EdTalks'; // Import EdTalks component
 import Hero from '@/Components/Hero';
 import Hero2 from '@/Components/hero2';
 import MobileNav from '@/Components/MobileNav';
@@ -26,7 +25,6 @@ const Homepage = () => {
         {/* Hero section */}
         
         <Hero />
-        <Login />
 
         
         {/* <Hero2/> */}
@@ -36,9 +34,6 @@ const Homepage = () => {
           
           {/* Internships */}
           <Services />
-          
-          {/* EdTalks */}
-          <EdTalks />
 
           {/* Testimonials */}
           <Testimonials />
